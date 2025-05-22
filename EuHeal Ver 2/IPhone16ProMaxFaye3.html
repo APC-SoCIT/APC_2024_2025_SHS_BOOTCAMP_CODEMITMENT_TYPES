@@ -1,0 +1,75 @@
+<div class="i-phone-16-pro-max-faye-3">
+  <div class="rectangle-6"></div>
+  <div class="ellipse-1"></div>
+    <!-- Main App Section -->
+    <div id="app-section" style="display:none;">
+      <p id="welcome-msg"></p>
+
+      <div class="tip-box">
+        💡 Wellness Tip: <span id="tip"></span>
+      </div>
+
+      <!-- Calendar -->
+      <div id="calendar" style="margin: 20px 0;"></div>
+
+      <!-- Reminder input -->
+      <div id="reminder-popup" style="display:none; margin-top: 1rem;">
+        <div class="no-medicine-for-today">No Medicine for Today</div>
+        <input type="text" id="reminder-text" placeholder="Enter self-care activity" />
+        <button id="save-reminder">Save Reminder</button>
+      </div>
+
+      <!-- Check-in Form -->
+       <form id="checkin-form"></form>
+        <div class="ellipse-3"></div>
+        <label>what are you feeling today?</label>
+        <select id="mood">
+          <option value="happy">😊 Happy</option>
+          <option value="okay">😐 Okay</option>
+          <option value="mad">😤 Mad</option>
+          <option value="confused">😖 Confused</option>
+          <option value="anxious">😩 Anxious</option>
+          <option value="sad">😢 Sad</option>
+        </form>
+        <input type="text" id="note" placeholder="Any notes?" />
+        <input type="number" id="sleep" placeholder="Hours of sleep" min="0" max="24" />
+        <button type="submit">Submit Check-in</button>
+      </select>
+      <div class="rectangle-2"></button>
+      <button id="tabs">
+        <button id="tab">
+          <button id="label">Stats</button>
+        </div>
+        <div class="tab"></div>
+      </div>
+      <div class="tab2">
+        <div class="label">Profile</div>
+      </div>
+      <div class="tab3">
+        <div class="label">Chat</div>
+      </div>
+      <div class="tab4">
+        <div class="label2">Home</div>
+      </div>
+      <img class="image-6" src="image-60.png" />
+      <img class="generic-avatar" src="generic-avatar0.svg" />
+      <img class="image-10" src="image-100.png" />
+      <img class="image-9" src="image-90.png" />
+      <img class="image-8" src="image-80.png" />
+      <div class="rectangle-7"></div>
+      <div class="rectangle-8"></div>
+      <div class="rectangle-10"></div>
+
+      <canvas id="moodChart" style="max-width: 100%; margin: 20px 0;"></canvas>
+      <button id="find-doctors">Find Doctors</button>
+      <button id="weekly-progress">Weekly Progress</button>
+      <button id="add-quick-access">Add Quick Access</button>
+      <button id="history">history</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+  

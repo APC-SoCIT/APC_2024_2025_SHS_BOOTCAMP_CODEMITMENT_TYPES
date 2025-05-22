@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./style.css">
+    <title>EuHeal Home</title>
+  </head>
+  <body>
+    <div class="container"></div>
+      <div class="i-phone-16-pro-max-faye-3">
+      <div class="rectangle-6"></div>
+      <div class="eclipse-1"></div>
+
+      <div class="eclipse-1"></div> <!-- semi-circle background -->
+      <div class="calendar-container">
+        <h1 class="main-title">Good Morning! 🌿</h1>
+      </div>
+      <div class="eclipse-1"></div> <!-- semi-circle background -->
+      <div class="calendar-container">
+        <div id="calendar"></div>
+      </div>
+      <!-- Main App Section -->
+      <div id="app-section">
+        <p id="welcome-msg"></p>
+        
+        <div class="tip-box">
+        💡 Wellness Tip: <span id="tip"></span>
+      </div>
+
+      <!-- Reminder input -->
+      <div id="reminder-popup" style="display:none; margin-top: 1rem;">
+        <div class="no-medicine-for-today">No Medicine for Today</div>
+        <input type="text" id="reminder-text" placeholder="Enter self-care activity" />
+        <button id="save-reminder">Save Reminder</button>
+      </div>
+
+      <!-- Check-in Form -->
+      <form id="checkin-form">
+        <div class="ellipse-3"></div>
+        <div class="feeling-text">What are you feeling today?</div>
+        <img id="image-10" src="your-image.png" />
+        <div class="mood-checker">
+          <form id="checkin-form">
+            <select id="mood" name="mood" required>
+              <option value="">Select</option>
+              <option value="happy">😊 Happy</option>
+              <option value="okay">😐 Okay</option>
+              <option value="confused">😕 Confused</option>
+              <option value="mad">😡 Mad</option>
+              <option value="anxious">😰 Anxious</option>
+              <option value="sad">😢 Sad</option>
+            </select>
+            <input type="text" id="note" placeholder="Add a note (optional)" />
+            <input type="number" id="sleep" placeholder="Sleep hours (e.g. 7)" />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+
+      <div class="tabs">
+        <div class="tab">
+          <div class="label">Stats</div>
+        </div>
+        <div class="tab"></div>
+      </div>
+      <div class="tab2">
+        <div class="label">Profile</div>
+      </div>
+      <div class="tab3">
+        <div class="label">Chat</div>
+      </div>
+      <div class="tab4">
+        <div class="label2">Home</div>
+      </div>
+      <img class="image-6" src="image-60.png" />
+      <img class="generic-avatar" src="generic-avatar0.svg" />
+      <img class="image-10" src="image-100.png" />
+      <img class="image-9" src="image-90.png" />
+      <img class="image-8" src="image-80.png" />
+      <div class="rectangle-7"></div>
+      <div class="rectangle-8"></div>
+      <div class="rectangle-10"></div>
+
+      <canvas id="moodChart" style="max-width: 100%; margin: 20px 0;"></canvas>
+      <button id="weekly-progress" class="weekly-progress">Weekly Progress</button>
+      <button id="add-quick-access" class="add-quick-access">Add Quick Access</button>
+      <button id="find-doctors" class="find-doctors">Find Doctors</button>
+      <button id="history" class="history">history</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
