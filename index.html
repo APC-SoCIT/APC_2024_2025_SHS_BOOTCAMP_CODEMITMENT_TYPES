@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Finder Philippines</title>
+  
+  <!-- Leaflet CSS and JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  
+  <!-- Google Places API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Main Content -->
+    <div class="i-phone-16-pro-max-13">
+      <div class="rectangle-12"></div>
+      
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <div class="state-layer">
+          <div class="leading-icon">
+            <div class="container">
+              <div class="state-layer2">
+                <img class="icon" src="icon0.svg" alt="Search" />
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <input type="text" id="searchInput" class="supporting-text" placeholder="search">
+          </div>
+          <div class="trailing-elements">
+            <div class="_1st-trailing-icon">
+              <div class="container">
+                <div class="state-layer2">
+                  <img class="icon2" src="icon1.svg" alt="Clear" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hospitals-nearby">Hospitals Nearby</div>
+      
+      <!-- Map Container -->
+      <div id="map" class="map-container"></div>
+      
+      <!-- Hospital List Container -->
+      <div id="hospitalList" class="hospital-list-container"></div>
+      
+      <!-- Specializations Section -->
+      <div class="specializations-container">
+        <div class="rectangle-15"></div>
+        <div class="specializations">Specializations</div>
+        
+        <div class="specialization-icons">
+          <div class="icon-button" data-spec="Allergist">
+            <div class="spec-icon">
+              <img class="image-20" src="image-200.png" alt="Allergist" />
+            </div>
+            <div class="allergist">Allergist</div>
+          </div>
+          
+          <div class="icon-button2" data-spec="Cardiologist">
+            <div class="spec-icon">
+              <img class="image-19" src="image-190.png" alt="Cardiologist" />
+            </div>
+            <div class="cardiologist">Cardiologist</div>
+          </div>
+          
+          <div class="icon-button3" data-spec="Dentist">
+            <div class="spec-icon">
+              <img class="image-21" src="image-210.png" alt="Dentist" />
+            </div>
+            <div class="dentist">Dentist</div>
+          </div>
+        </div>
+        
+        <div class="disclsoure" id="specDropdownBtn">
+          <div class="div">􀆊</div>
+        </div>
+        
+        <!-- Specialization Dropdown -->
+        <div id="specDropdown" class="spec-dropdown">
+          <div class="dropdown-item" data-spec="All">All Specializations</div>
+          <div class="dropdown-item" data-spec="Allergist">Allergist</div>
+          <div class="dropdown-item" data-spec="Cardiologist">Cardiologist</div>
+          <div class="dropdown-item" data-spec="Dentist">Dentist</div>
+          <div class="dropdown-item" data-spec="Dermatologist">Dermatologist</div>
+          <div class="dropdown-item" data-spec="Dietician">Dietician</div>
+          <div class="dropdown-item" data-spec="Endocrinologist">Endocrinologist</div>
+          <div class="dropdown-item" data-spec="Gastroenterologist">Gastroenterologist</div>
+          <div class="dropdown-item" data-spec="Neurologist">Neurologist</div>
+          <div class="dropdown-item" data-spec="Obstetrician">Obstetrician</div>
+          <div class="dropdown-item" data-spec="Oncologist">Oncologist</div>
+          <div class="dropdown-item" data-spec="Ophthalmologist">Ophthalmologist</div>
+          <div class="dropdown-item" data-spec="Orthopedist">Orthopedist</div>
+          <div class="dropdown-item" data-spec="Pediatrician">Pediatrician</div>
+          <div class="dropdown-item" data-spec="Psychiatrist">Psychiatrist</div>
+          <div class="dropdown-item" data-spec="Physiatrist">Physiatrist</div>
+          <div class="dropdown-item" data-spec="Urologist">Urologist</div>
+        </div>
+
+        <div class="specialization-icons" id="specializationIcons">
+          <div class="icon-button" data-spec="Allergist">
+            <div class="spec-icon">
+              <img class="image-20" src="image-200.png" alt="Allergist" />
+            </div>
+            <div class="allergist">Allergist</div>
+          </div>
+          
+          <div class="icon-button2" data-spec="Cardiologist">
+            <div class="spec-icon">
+              <img class="image-19" src="image-190.png" alt="Cardiologist" />
+            </div>
+            <div class="cardiologist">Cardiologist</div>
+          </div>
+          
+          <div class="icon-button3" data-spec="Dentist">
+            <div class="spec-icon">
+              <img class="image-21" src="image-210.png" alt="Dentist" />
+            </div>
+            <div class="dentist">Dentist</div>
+          </div>
+          
+          <div class="icon-button" data-spec="Dermatologist">
+            <div class="spec-icon">
+              <img class="336-3368173_dermatology-clipart-dermatology-allergy-dermatology" src="336-3368173_dermatology-clipart-dermatology-allergy-dermatology" alt="Dermatologist" />
+            </div>
+            <div class="spec-label">Dermatologist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Dietician">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Dietician" />
+            </div>
+            <div class="spec-label">Dietician</div>
+          </div>
+
+          <div class="icon-button" data-spec="Endocrinologist">
+            <div class="spec-icon">
+              <img class="OIP-removebg-preview" src="OIP-removebg-preview" alt="Endocrinologist" />
+            </div>
+            <div class="spec-label">Endocrinologist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Gastroenterologist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Gastroenterologist" />
+            </div>
+            <div class="spec-label">Gastroenterologist</div>
+          </div>
+          
+          <div class="icon-button" data-spec="Neurologist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Neurologist" />
+            </div>
+            <div class="spec-label">Neurologist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Obstetrician">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Obstetrician" />
+            </div>
+            <div class="spec-label">Obstetrician</div>
+          </div>
+
+          <div class="icon-button" data-spec="Oncologist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Oncologist" />
+            </div>
+            <div class="spec-label">Oncologist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Ophthalmologist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Ophthalmologist" />
+            </div>
+            <div class="spec-label">Ophthalmologist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Orthopedist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Orthopedist" />
+            </div>
+            <div class="spec-label">Orthopedist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Pediatrician">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Pediatrician" />
+            </div>
+            <div class="spec-label">Pediatrician</div>
+          </div>
+
+          <div class="icon-button" data-spec="Physiatrist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Psychiatrist" />
+            </div>
+            <div class="spec-label">Psychiatrist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Physiatrist">
+            <div class="spec-icon">
+              <img class="nutrition-clipart-dietitian-1" src="nutrition-clipart-dietitian-1" alt="Physiatrist" />
+            </div>
+            <div class="spec-label">Physiatrist</div>
+          </div>
+
+          <div class="icon-button" data-spec="Neurologist">
+            <div class="spec-icon">
+              <img class="spec-image" src="image-200.png" alt="Neurologist" />
+            </div>
+            <div class="spec-label">Neurologist</div>
+          </div>
+        </div>
+        <!-- Add navigation arrows for specialization scrolling -->
+         <div class="spec-nav-arrows">
+          <div class="spec-nav-left" id="specNavLeft">❮</div>
+          <div class="spec-nav-right" id="specNavRight">❯</div>
+        </div>opdown-item" data-spec="Dentist">Dentist</div>
+        <div class="dropdown-item" data-spec="Dermatologist">Dermatologist</div>
+        <div class="dropdown-item" data-spec="Endocrinologist">Endocrinologist</div>
+        <div class="dropdown-item" data-spec="Gastroenterologist">Gastroenterologist</div>
+        <div class="dropdown-item" data-spec="Neurologist">Neurologist</div>
+        <div class="dropdown-item" data-spec="Obstetrician">Obstetrician</div>
+        <div class="dropdown-item" data-spec="Oncologist">Oncologist</div>
+        <div class="dropdown-item" data-spec="Ophthalmologist">Ophthalmologist</div>
+        <div class="dropdown-item" data-spec="Orthopedist">Orthopedist</div>
+        
+        <!-- Pagination Dots -->
+        <div class="pagination-dots">
+          <div class="ellipse-206"></div>
+          <div class="ellipse-207"></div>
+          <div class="ellipse-208"></div>
+          <div class="ellipse-209"></div>
+          <div class="ellipse-210"></div>
+          <div class="ellipse-211"></div>
+        </div>
+      </div>
+      
+      <!-- Bottom Navigation -->
+      <div class="rectangle-2"></div>
+      <img class="image-11" src="image-110.png" alt="Home" />
+      <img class="image-9" src="image-90.png" alt="Appointments" />
+      <img class="image-27" src="image-270.png" alt="Map" />
+      <img class="image-26" src="image-260.png" alt="Notifications" />
+      <img class="generic-avatar" src="generic-avatar0.svg" alt="Profile" />
+      
+      <!-- Navigation Indicators -->
+      <div class="tab"></div>
+      <div class="tab2"></div>
+      <div class="tab3"></div>
+      <div class="tab4"></div>
+    </div>
+  </div>
+  
+  <!-- Booking Modal -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-content">
+      <h2>Book Appointment</h2>
+      <div id="hospitalName" class="hospital-name"></div>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="userName">Your Name</label>
+          <input type="text" id="userName" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="appointmentTime">Appointment Date & Time</label>
+          <input type="datetime-local" id="appointmentTime" required />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="confirm-btn">Confirm Booking</button>
+          <button type="button" id="closeModal" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <div class="toast-content">
+      <div id="toastMessage">Booking confirmed!</div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
