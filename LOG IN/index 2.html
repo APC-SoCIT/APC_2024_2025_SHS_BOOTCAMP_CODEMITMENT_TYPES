@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EuHeal UI</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="slider" id="slider">
+      
+      <!-- Screen 0: Welcome -->
+      <section class="screen welcome-screen">
+        <div class="content">
+          <h1>Welcome to <span class="highlight">EuHeal</span>!</h1>
+          <p>Create an account to get started on your health and happiness journey.</p>
+          <button class="btn btn-dark" onclick="goToSlide(1)">Sign Up</button>
+          <button class="btn btn-light" onclick="goToSlide(3)">Log In</button>
+        </div>
+      </section>
+
+      <!-- Screen 1: Explore -->
+      <section class="screen explore-screen">
+        <div class="content">
+          <h2>Explore the app</h2>
+          <p>Now your healthcare companion is in one place and always under control</p>
+          <button class="btn btn-social google">Continue with Google</button>
+          <button class="btn btn-social apple">Continue with Apple</button>
+          <button class="btn btn-social email" onclick="goToSlide(2)">Continue with Email</button>
+          <p class="login-text">Already have an account? <a href="#" onclick="goToSlide(3)">Log in</a></p>
+        </div>
+      </section>
+
+      <!-- Screen 2: Create Account -->
+      <section class="screen form-screen">
+        <div class="content">
+          <h2>Create account</h2>
+          <form>
+            <input type="email" placeholder="Email address" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm password" required>
+            <button type="submit" class="btn btn-dark">Create account</button>
+          </form>
+          <p class="terms">By creating an account or signing you agree to our <a href="#">Terms and Conditions</a></p>
+        </div>
+      </section>
+
+      <!-- Screen 3: Login -->
+      <section class="screen form-screen">
+        <div class="content">
+          <h2>Hi, Welcome Back</h2>
+          <p>Login to your account to start</p>
+          <form>
+            <input type="email" placeholder="Email address" value="jeonghan@gmail.com" required>
+            <input type="password" placeholder="Password" value="password" required>
+            <div class="small-text right"><a href="#">Forgot password?</a></div>
+            <button type="submit" class="btn btn-dark">Log in</button>
+          </form>
+          <p class="login-text">Don’t have an account? <a href="#" onclick="goToSlide(2)">Sign up</a></p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    function goToSlide(index) {
+      const slider = document.getElementById("slider");
+      slider.style.transform = `translateX(-${index * 100}vw)`;
+    }
+  </script>
+</body>
+</html>

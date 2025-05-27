@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | EuHeal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="screen form-screen">
+    <h2>Hi, Welcome Back</h2>
+    <p>Login to your account to start</p>
+    <form onsubmit="event.preventDefault(); window.location.href='home.html';">
+        <input type="email" placeholder="Email address" value="jeonghan@gmail.com" required>
+        <input type="password" placeholder="Password" value="password" required>
+        <div class="small-text right"><a href="#">Forgot password?</a></div>
+        <button type="submit" class="btn btn-dark">Log in</button>
+    </form>
+
+    <p class="small-text">Don’t have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #26483e, #a3bba8);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.screen {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+}
+
+.form-screen {
+  background-color: #e5e5d7;
+  color: #333;
+}
+
+h1, h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.highlight {
+  color: #e0c85a;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.btn, .btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-dark {
+  background-color: #2e4734;
+  color: white;
+}
+
+.btn-light {
+  background-color: #e2e2e2;
+  color: #333;
+}
+
+.google {
+  background-color: #fff;
+  color: #333;
+}
+
+.apple {
+  background-color: #000;
+  color: #fff;
+}
+
+.email {
+  background-color: #f1f1f1;
+  color: #444;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.small-text {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+a {
+  color: #d3f1c9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
