@@ -1,4 +1,3 @@
-// Hospital Finder App - Enhanced with More Hospitals and Specializations
 class HospitalFinder {
   constructor() {
     this.map = null
