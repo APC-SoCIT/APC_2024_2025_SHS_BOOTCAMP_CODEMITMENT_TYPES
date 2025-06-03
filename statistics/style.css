@@ -1,0 +1,657 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f4f0;
+  min-height: 100vh;
+  color: #333;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #f0f4f0;
+}
+
+/* Header */
+.header {
+  background: #4a6b68;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.profile-icon {
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+.main-content {
+  padding: 30px;
+  padding-bottom: 120px;
+}
+
+/* Demo Notice */
+.demo-notice {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Activity Status */
+.activity-status {
+  background: linear-gradient(135deg, #7fb069 0%, #a8d5a8 100%);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.activity-status h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: white;
+  font-weight: 600;
+}
+
+.activity-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.rings-section {
+  position: relative;
+}
+
+.progress-rings {
+  position: relative;
+}
+
+.ring-svg {
+  transform: rotate(-90deg);
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.center-stats {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.calories {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #2d5a2d;
+}
+
+.cal-label {
+  font-size: 14px;
+  color: #2d5a2d;
+  font-weight: 600;
+}
+
+.stats-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.move-color {
+  background: #ff6b6b;
+}
+.exercise-color {
+  background: #4ecdc4;
+}
+.stand-color {
+  background: #45b7d1;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d5a2d;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #2d5a2d;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card-header i {
+  font-size: 20px;
+  color: white;
+}
+
+.card-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.card-content {
+  text-align: center;
+}
+
+.big-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.card-content small {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  display: block;
+  margin-top: 8px;
+}
+
+/* Specific Card Gradient Styles */
+.workout-card {
+  background: linear-gradient(135deg, #2c5530 0%, #54803c 100%);
+}
+
+.weight-card {
+  background: linear-gradient(135deg, #2c5530 0%, #54803c 100%);
+}
+
+.rating-card {
+  background: linear-gradient(135deg, #2c5530 0%, #54803c 100%);
+}
+
+.water-card {
+  background: linear-gradient(135deg, #2c5530 0%, #54803c 100%);
+}
+
+.stats-card {
+  background: linear-gradient(135deg, #2c5530 0%, #54803c 100%);
+}
+
+.weight-chart {
+  margin: 15px 0;
+  height: 50px;
+}
+
+.weight-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.unit {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.rating-status {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.water-glasses {
+  margin: 20px 0;
+}
+
+.glass-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.glass {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.glass:hover {
+  transform: scale(1.1);
+}
+
+.glass.current {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.water-text {
+  font-size: 14px;
+  margin: 8px 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Buttons */
+.card-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Weekly Summary - Main Container */
+.weekly-summary {
+  background: linear-gradient(135deg, #54803c 0%, #54803c 100%);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  color: white;
+}
+
+.weekly-summary h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Summary Grid - White boxes */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  text-align: center;
+  padding: 20px;
+  background: #e8f5e8;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.summary-item:hover {
+  transform: translateY(-2px);
+}
+
+.summary-item .value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2d5a2d;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.summary-item .label {
+  font-size: 14px;
+  color: #5a7c57;
+  font-weight: 500;
+}
+
+.loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  padding: 40px;
+}
+
+/* This Week's Progress Section - White background */
+.weekly-progress-section {
+  background: #e8f5e8;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.weekly-progress-section h4 {
+  color: #2d5a2d !important;
+  margin-bottom: 15px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #2d5a2d !important;
+  font-weight: 600;
+}
+
+.progress-percentage {
+  font-weight: bold !important;
+  color: #5a7c57 !important;
+  font-size: 18px !important;
+}
+
+.progress-bar {
+  background: #e0e8e0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #5a7c57, #7fb069);
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+/* Improvements and Recommendations - White text on green background */
+.improvements-recommendations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.improvements-section h4 {
+  color: white !important;
+  margin-bottom: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recommendations-section h4 {
+  color: white !important;
+  margin-bottom: 12px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.improvements-section ul,
+.recommendations-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.improvements-section ul li,
+.recommendations-section ul li {
+  padding: 8px 0 !important;
+  color: white !important;
+  font-size: 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Fitbit Branding - White background */
+.fitbit-branding {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e8f5e8;
+  border-radius: 10px;
+  text-align: center;
+  color: #2d5a2d;
+}
+
+.fitbit-branding i {
+  color: #00b0b9;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.fitbit-branding span {
+  font-weight: 600;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #4a6b68;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  gap: 60px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 20px;
+  border-radius: 12px;
+  min-width: 80px;
+}
+
+.nav-item.active {
+  color: #92e366;
+  background: rgba(168, 213, 168, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-item:hover {
+  color: #92e366;
+  transform: translateY(-1px);
+}
+
+.nav-item i {
+  font-size: 22px;
+}
+
+.nav-item span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Fitbit Auth Button */
+.fitbit-auth-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2d5a2d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(45, 90, 45, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fitbit-auth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 90, 45, 0.4);
+  background: #1e3a1e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+    padding-bottom: 120px;
+  }
+
+  .activity-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .improvements-recommendations {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .bottom-nav {
+    gap: 20px;
+    padding: 15px 0;
+  }
+
+  .nav-item {
+    min-width: 60px;
+    padding: 8px 12px;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .fitbit-auth-btn {
+    top: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .activity-status {
+    padding: 20px;
+  }
+
+  .weekly-summary {
+    padding: 20px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom-nav {
+    gap: 15px;
+  }
+}
